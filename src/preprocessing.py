@@ -308,6 +308,8 @@ def preprocess_for_blocking(df):
     df["country_clean"] = df["country"].map(
         normalize_country
     )
-
+    df["address_numbers"] = df["address_clean"].map(
+        extract_numbers
+    )
     return df
-```
+
